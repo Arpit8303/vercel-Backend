@@ -67,6 +67,11 @@ app.use("/api/v1/jobs", jobsRoutes);
 //homeroute root
 app.use("/api-doc", swaggerUi.serve, swaggerUi.setup(spec));
 
+//root route
+app.get("/", (req, res) => {
+  res.send("<h1>Welcome to Job Portal Application API</h1>");
+});
+
 //validation middelware
 app.use(errorMiddleware);
 
